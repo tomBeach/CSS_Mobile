@@ -1,0 +1,61 @@
+/* ======= specs ======= */
+pixmixMobile
+sections
+    • day
+    • week
+        scroll L/R 1-7 pix
+        click to edit
+    • month
+        4x7 grid
+        select week/select day
+    • year
+        select month/select week
+
+colors
+    /*
+    void: #a239ca;
+    fuchia: #0e0b16;
+    jewel: #4717f6;
+    stark: #e7dfdd;
+    violet: #6e3667;
+    lime: #88d317;
+    plum: #1a0315;
+    shadow: #535353;
+    */
+
+======= positioning =======
+== potition attributes
+    top, bottom, left, right
+    values will be relative to the parent element for relative or absolute positioning
+
+== position: absolute;
+    element is removed from the flow of elements on the page
+
+== position: relative;
+two things happen when you set position: relative; on an element
+    - z-index enabled
+    - allows child elements to be absolutely positioned within it
+
+/* ======= device breakpoints ======= */
+@media (min-width:320px) { /* smartphones, iPhone, portrait 480x320 phones */ }
+@media (min-width:481px) { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media (min-width:641px) { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
+/*
+Whenever the .glyphicon class is added to an element it adds the following:
+    .glyphicon {
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        font-family: "Glyphicons Halflings";
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+*/

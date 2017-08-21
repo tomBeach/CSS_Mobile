@@ -1,0 +1,25 @@
+#header, #topic, #container, #footer {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid purple;
+}
+p {
+    margin: 0;
+}
+.section {
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid purple;
+}
+#header {
+    background-color: #ddd;
+}
+#page-wrap {
+     width: 1200px;
+     margin: 0 auto;
+     background-color: #eee;
+     overflow-x: auto;
+}
+.hilite {
+    color: red;
+}

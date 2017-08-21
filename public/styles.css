@@ -1,0 +1,199 @@
+/*
+void #a239ca
+fuchia #0e0b16
+jewel #4717f6
+stark #e7dfdd
+lime #88d317
+plum #1a0315
+shadow #535353
+*/
+/* =======  ======= general  ======= ======= */
+html, body {
+  height: 100%;
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Ariel", sans-serif; }
+
+/*  ======= ======= sections  ======= ======= */
+#content1 {
+  width: 100%;
+  height: 30%; }
+
+/*  ======= ======= responsive  ======= ======= */
+/* ======= large ======= */
+@media (min-width: 1825px) {
+  body {
+    background-color: #1a0315; } }
+/* ======= laptop to large ======= */
+@media (min-width: 1224px) and (max-width: 1824px) {
+  body {
+    background-color: #6e3667; } }
+/* ======= tab:L to laptop ======= */
+@media (min-width: 1024px) and (max-width: 1223px) {
+  body {
+    background-color: #535353; } }
+/* ======= iPhone6:L to tab:P ======= */
+@media (min-width: 669px) and (max-width: 1023px) {
+  body {
+    background-color: #1a0315; } }
+/* ======= iPhone6:P to iPhone6:L ======= */
+@media (min-width: 321px) and (max-width: 668px) {
+  body {
+    background-color: #88d317; } }
+/* ======= iPhone6:P ======= */
+@media (max-width: 320px) {
+  /* ======= general ======= */
+  body {
+    /*background-color: #6e3667;*/ }
+
+  #header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    background-color: #88d317;
+    z-index: 9; }
+
+  #header > div {
+    margin: 0; }
+
+  .section {
+    height: 320px; }
+
+  /* ======= menu-btn ======= */
+  #toggle-menu {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    color: #1a2930;
+    font-size: 1.6em;
+    background-size: 30px 30px;
+    background-color: #f0f0f0;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 6px; }
+
+  #toggle-menu:focus {
+    outline: none; }
+
+  /* ======= logo ======= */
+  #logo1, #logo2 {
+    float: right;
+    color: #1a2930;
+    font-size: 1.8em; }
+
+  #logo1 {
+    margin: 12px 0 0 0;
+    font-family: 'Special Elite', cursive; }
+
+  #logo2 {
+    margin: 10px 10px 0 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200; }
+
+  .section-title {
+    position: relative;
+    height: 60px;
+    text-align: right;
+    margin: 0; }
+
+  #title1, #title2 {
+    float: right;
+    color: #1a2930;
+    font-size: 1.8em;
+    margin: 5px 10px 0 0;
+    color: #88d317; }
+
+  #title1 {
+    font-family: 'Special Elite', cursive; }
+
+  #title2 {
+    margin: 3px 8px 0 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200; }
+
+  /* ======= day-pix ======= */
+  .section {
+    margin: 0; }
+
+  #day-pix {
+    margin-top: 60px;
+    background-color: #6e3667; }
+
+  #week-pix {
+    background-color: #a239ca;
+    overflow-y: scroll; }
+
+  .pic {
+    position: absolute;
+    float: left;
+    width: 80%;
+    height: auto; }
+
+  /* ======= week-pix ======= */
+  #week-grid {
+    height: 236px;
+    width: 2240px;
+    margin: 10px;
+    background-color: red; }
+
+  /* ======= side-menu ======= */
+  #side-menu {
+    position: absolute;
+    clear: left;
+    width: 120px;
+    height: 320px;
+    left: 0;
+    margin: 0;
+    margin-left: -120px;
+    background-color: #4717f6;
+    -webkit-transition: margin-left 500ms;
+    transition: margin-left 500ms;
+    z-index: 1; }
+
+  #side-menu-table {
+    position: absolute;
+    clear: left;
+    width: 92%;
+    height: 120px;
+    margin: 10px auto;
+    border-collapse: separate;
+    border-spacing: 5px 10px;
+    z-index: 1; }
+
+  #side-menu-table > tbody > tr {
+    height: 40px;
+    background-color: #0e0b16; }
+
+  #side-menu-table > tbody > tr > td {
+    height: 30px;
+    text-align: center;
+    color: #e5e2d1;
+    background-color: #0e0b16; }
+
+  #side-menu-table > tbody > tr > td:hover {
+    color: white;
+    background-color: #b30000; }
+
+  .glyphicon-pencil, .glyphicon-flash, .glyphicon-file {
+    margin: 16px; }
+
+  .glyph-color {
+    color: white; }
+
+  #side-menu-table > tbody > tr > td > a {
+    color: inherit;
+    text-decoration: none; }
+
+  .drop-item:hover {
+    color: #b30000; } }
+/*  ======= ======= ARCHIVE  ======= ======= */
+/*  ======= ======= ARCHIVE  ======= ======= */
+/*  ======= ======= ARCHIVE  ======= ======= */
+
+/*# sourceMappingURL=styles.css.map */
