@@ -3,6 +3,8 @@
 $lime: #88d317;
 $violet: #6e3667;
 $fuchia: #a239ca;
+$ink: #062f4f;
+
 $headerH: 60px;
 $sm_section: 320px;
 
@@ -14,6 +16,7 @@ stark #e7dfdd
 lime #88d317
 plum #1a0315
 shadow #535353
+ink #062f4f
 */
 
 /* =======  ======= general  ======= ======= */
@@ -69,7 +72,10 @@ body {
     }
 }
 
-/* ======= iPhone6:P ======= */
+/* ======= ======= ======= iPhone6:P ======= ======= ======= */
+/* ======= ======= ======= iPhone6:P ======= ======= ======= */
+/* ======= ======= ======= iPhone6:P ======= ======= ======= */
+
 @media (max-width: 320px) {
     /* ======= general ======= */
     body {
@@ -112,6 +118,7 @@ body {
         float: right;
         color: #1a2930;
         font-size: 1.8em;
+        text-shadow: 0pt 0px 0pt rgb(0, 0, 0);
     }
     #logo1 {
         margin: 12px 0 0 0;
@@ -134,6 +141,7 @@ body {
         font-size: 1.8em;
         margin: 5px 10px 0 0;
         color: $lime;
+        text-shadow: 0pt 0px 0pt rgb(0, 0, 0);
     }
     #title1 {
         font-family: 'Special Elite', cursive;
@@ -144,9 +152,21 @@ body {
         font-weight: 200;
     }
 
-    /* ======= day-pix ======= */
+    /* ======= sections ======= */
     .section {
         margin: 0;
+    }
+    #pix-port {
+        width: 100%;
+        height: $sm_section - $headerH;
+        overflow-y: scroll;
+        // border: solid 2px black;
+    }
+
+    /* ======= day-pix ======= */
+    #day-header {
+        height: $headerH;
+        background-color: #673260;
     }
     #day-pix {
         margin-top: $headerH;
@@ -160,14 +180,12 @@ body {
     }
 
     /* ======= week-pix ======= */
+    #week-header {
+        height: $headerH;
+        background-color: #9030b5;
+    }
     #week-pix {
         background-color: $fuchia;
-    }
-    #week-port {
-        width: 100%;
-        height: 100%;
-        overflow-y: scroll;
-        border: solid 2px black;
     }
     #week-grid {
         display: flex;
@@ -177,10 +195,24 @@ body {
         align-items: center;
         align-content: space-around;
         height: $sm_section*0.8-20;
-        // width: $sm_section*7;
-        background-color: $fuchia;
+        // background-color: $fuchia;
     }
-    .grid-pic {
+    .week-grid-pic {
+        width: 200px;
+        height: auto;
+        margin: 20px;
+        border: solid 1px white;
+    }
+
+    /* ======= month-pix ======= */
+    #month-header {
+        height: $headerH;
+        background-color: #052b47;
+    }
+    #month-pix {
+        background-color: $ink;
+    }
+    .month-grid-pic {
         width: 150px;
         height: auto;
         margin: 20px;
@@ -192,37 +224,34 @@ body {
         clear: left;
         width: 120px;
         height: $sm_section;
+        top: $headerH;
         left: 0;
         margin: 0;
         margin-left: -120px;
         background-color: #4717f6;
         -webkit-transition: margin-left 500ms;
         transition: margin-left 500ms;
-        z-index: 1;
     }
     #side-menu-table {
         position: absolute;
         clear: left;
-        width: 92%;
+        width: 90%;
         height: 120px;
-        margin: 10px auto;
+        margin: 10px 0;
+        margin-left: 7px;
         border-collapse: separate;
-        border-spacing: 5px 10px;
-        z-index: 1;
+        border-spacing: 10px 10px;
     }
     #side-menu-table > tbody > tr {
         height: 40px;
-        background-color: #0e0b16;
-    }
-    #side-menu-table > tbody > tr > td {
-        height: 30px;
         text-align: center;
         color: #e5e2d1;
+    }
+    .menu-btn {
         background-color: #0e0b16;
     }
-    #side-menu-table > tbody > tr > td:hover {
-        color: white;
-        background-color: #b30000;
+    .mgmt-btn {
+        background-color: red;
     }
     .glyphicon-pencil, .glyphicon-flash, .glyphicon-file {
         margin: 16px;
@@ -233,9 +262,7 @@ body {
     #side-menu-table > tbody > tr > td > a {
         color: inherit;
         text-decoration: none;
-    }
-    .drop-item:hover {
-        color: #b30000;
+        // text-shadow: 0pt 0px 0pt rgb(0, 0, 0);
     }
 }
 

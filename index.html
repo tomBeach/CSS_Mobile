@@ -24,39 +24,47 @@
 			<!-- == header == -->
 		    <div id="header">
 				<div>
-					<button id="toggle-menu" type="button" class="glyphicon glyphicon-menu-hamburger"></button>
+					<button id="toggle-menu" type="button" class="glyphicon glyphicon-menu-hamburger" data-role="none"></button>
 					<span id="logo2">Mobile</span><span id="logo1">pixmix</span>
 				</div>
 		    </div>
 
 			<!-- == content == -->
 			<div id="day-pix" class="section">
-				<span id="title1">pix</span><span id="title2">today</span>
+				<div id="day-header">
+					<span id="title1">pix</span><span id="title2">today</span>
+				</div>
 				<img id="today-pic" class="pic" src="PIX/3Atrium_before.jpg" alt="house-before-alley">
 				<div id="side-menu">
 					<table id="side-menu-table">
 						<tbody>
-							<tr>
+							<tr id="day" class="menu-btn">
 								<td>
 									<a class="menu-link" href="#">day
 									<span class="glyphicon glyphicon-pawn"></span></a>
 								</td>
 							</tr>
-							<tr>
-								<td class="menu-item">
+							<tr id="week" class="menu-btn">
+								<td>
 									<a class="menu-link" href="#">week
 									<span class="glyphicon glyphicon-bishop"></span></a>
 								</td>
 							</tr>
-							<tr>
+							<tr id="month" class="menu-btn">
 								<td>
 									<a class="menu-link" href="#">month
 									<span class="glyphicon glyphicon-knight"></span></a>
 								</td>
 							</tr>
-							<tr>
+							<tr id="year" class="menu-btn">
 								<td>
 									<a class="menu-link" href="#">year
+									<span class="glyphicon glyphicon-king"></span></a>
+								</td>
+							</tr>
+							<tr id="edit" class="mgmt-btn">
+								<td>
+									<a class="mgmt-link" href="#">edit
 									<span class="glyphicon glyphicon-king"></span></a>
 								</td>
 							</tr>
@@ -67,22 +75,37 @@
 
 			<!-- == week-pix == -->
 			<div id="week-pix" class="section">
-				<p class="section-title"><span id="title1">pix</span><span id="title2">week</span></p>
-				<div id="week-port">
+				<div id="week-header">
+					<p class="section-title"><span id="title1">pix</span><span id="title2">week</span></p>
+				</div>
+				<div id="pix-port">
 					<div id="week-grid">
-						<img id="week_1" class="grid-pic" src="PIX/3Atrium_before.jpg" alt="atrium-before">
-						<img id="week_2" class="grid-pic" src="PIX/4Atrium_after.jpg" alt="4Atrium_after">
-						<img id="week_3" class="grid-pic" src="PIX/1alley_before.jpg" alt="alley_before">
-						<img id="week_4" class="grid-pic" src="PIX/2alley_after.jpg" alt="alley_after">
+						<img id="week_1" class="week-grid-pic" src="PIX/3Atrium_before.jpg" alt="atrium-before">
+						<img id="week_2" class="week-grid-pic" src="PIX/4Atrium_after.jpg" alt="4Atrium_after">
+						<img id="week_3" class="week-grid-pic" src="PIX/1alley_before.jpg" alt="alley_before">
+						<img id="week_4" class="week-grid-pic" src="PIX/2alley_after.jpg" alt="alley_after">
 					</div>
 				</div>
 			</div>
 
 		    <!-- == month-pix == -->
 		    <div id="month-pix" class="section">
-				<!-- <p class="section-title"><span id="title2">month</span><span id="title1">pix</span></p> -->
+				<div id="month-header">
+					<p class="section-title"><span id="title1">pix</span><span id="title2">month</span></p>
+				</div>
+				<div id="pix-port">
+					<div id="month-grid">
+						<img id="month_1" class="month-grid-pic" src="PIX/3Atrium_before.jpg" alt="atrium-before">
+						<img id="month_2" class="month-grid-pic" src="PIX/4Atrium_after.jpg" alt="4Atrium_after">
+						<img id="month_3" class="month-grid-pic" src="PIX/1alley_before.jpg" alt="alley_before">
+						<img id="month_4" class="month-grid-pic" src="PIX/2alley_after.jpg" alt="alley_after">
+					</div>
+				</div>
 		    </div>
 
+			<div id="month-pix" class="section">
+				&nbsp;
+			</div>
 		</div>
 
 		<!-- == scripts == -->

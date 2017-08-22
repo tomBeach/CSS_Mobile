@@ -7,28 +7,54 @@ $(document).ready(function() {
 
     function initialize() {
         console.log("== initialize ==");
-        $('#toggle-menu').on('mouseenter', toggleBtn);
-        $('#toggle-menu').on('mouseleave', toggleBtn);
+        $('.menu-btn').on('mousedown', toggleMenuLink);
+        // $('.menu-btn').on('mouseup', toggleMenuLink);
         $('#toggle-menu').on('mousedown', toggleMenu);
-        // $('#menu-header').on('mouseenter', showDrop);
-        // $('#menu-header').on('mouseleave', hideDrop);
-        // $('#menu-header').on('mousedown', lockMenu);
-        // $('.accordion').on('click', togglePanels);
     }
-    $(window).on("orientationchange",function(e){
-        console.log("== orientationchange ==");
-        console.log("e.orientation:", e.orientation);
-    });
     function toggleMenu() {
         console.log("== toggleMenu ==");
         if ($('#side-menu').css('margin-left') == '-120px') {
-            $('#side-menu').css('margin-left', '0px');
+            $('#side-menu').css('margin-left', '0');
         } else {
             $('#side-menu').css('margin-left', '-120px');
         }
     }
-    function toggleBtn() {
-        console.log("== toggleBtn ==");
+    function toggleMenuLink(e) {
+        console.log("== toggleMenuLink ==");
+        console.log("...'background-color'):", $('#' + e.currentTarget.id).css('background-color'));
+        var whichPix = e.currentTarget.id;
+        var dayScroll = $('#day-pix').offset().top - 60;
+        var weekScroll = $('#week-pix').offset().top - 60;
+        var monthScroll = $('#month-pix').offset().top - 60;
+        console.log("whichPix:", whichPix);
+        console.log("dayScroll:", dayScroll);
+        console.log("weekScroll:", weekScroll);
+        console.log("monthScroll:", monthScroll);
+        if ($('#' + whichPix).css('background-color') == 'rgb(14, 11, 22)') {
+            $('.menu-btn').css('background-color', 'rgb(14, 11, 22)');
+            $('#' + whichPix).css('background-color', 'rgb(255, 0, 0)');
+        } else {
+            $('#' + whichPix).css('background-color', 'rgb(14, 11, 22)');
+        }
+        switch (whichPix) {
+            case "day":
+            $('html, body').animate({
+                scrollTop: dayScroll
+            }, 300);
+            break;
+            case "week":
+            $('html, body').animate({
+                scrollTop: weekScroll
+            }, 300);
+            break;
+            case "month":
+            $('html, body').animate({
+                scrollTop: monthScroll
+            }, 300);
+            break;
+            default:
+
+        }
     }
     function checkImageWH(imageId) {
         console.log("== checkImageWH ==");
@@ -51,7 +77,7 @@ $(document).ready(function() {
             var newH = parseInt((maxWH*imageH)/imageW);
             var topOffset = parseInt((320 - newH)/2);
             console.log("topOffset:", topOffset);
-            var newT = imgT + topOffset;
+            var newT = imgT;
             $(dayImage).css('width', maxWH + 'px');
             $(dayImage).css('height', 'auto');
             $(dayImage).css('top', newT + 'px');
