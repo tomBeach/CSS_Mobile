@@ -152,10 +152,6 @@ body {
         margin-top: $headerH;
         background-color: $violet;
     }
-    #week-pix {
-        background-color: $fuchia;
-        overflow-y: scroll;
-    }
     .pic {
         position: absolute;
         float: left;
@@ -164,16 +160,35 @@ body {
     }
 
     /* ======= week-pix ======= */
+    #week-pix {
+        background-color: $fuchia;
+    }
+    #week-port {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        border: solid 2px black;
+    }
     #week-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: space-around;
         height: $sm_section*0.8-20;
-        width: $sm_section*7;
-        margin: 10px;
-        background-color: red;
+        // width: $sm_section*7;
+        background-color: $fuchia;
+    }
+    .grid-pic {
+        width: 150px;
+        height: auto;
+        margin: 20px;
     }
 
     /* ======= side-menu ======= */
     #side-menu {
-        position: absolute;
+        position: fixed;
         clear: left;
         width: 120px;
         height: $sm_section;
