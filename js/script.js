@@ -1,12 +1,10 @@
 $(document).ready(function() {
     console.log("======= jQuery OK =======");
     console.log("window.orientation:", window.orientation);
-    if(window.innerHeight > window.innerWidth){
-        console.log("+++ portrait +++");
-    }
 
     function initialize() {
         console.log("== initialize ==");
+        $('.menu-btn[0]').on('mousedown', toggleMenuLink);
         $('.menu-btn').on('mousedown', toggleMenuLink);
         // $('.menu-btn').on('mouseup', toggleMenuLink);
         $('#toggle-menu').on('mousedown', toggleMenu);
@@ -21,7 +19,10 @@ $(document).ready(function() {
     }
     function toggleMenuLink(e) {
         console.log("== toggleMenuLink ==");
-        console.log("...'background-color'):", $('#' + e.currentTarget.id).css('background-color'));
+        console.log("$('.menu-btn')[0]:", $('.menu-btn')[0]);
+        console.log("$('.menu-btn').length:", $('.menu-btn').length);
+        console.dir( $._data(day, 'events') );
+        console.dir( $._data(week, 'events') );
         var whichPix = e.currentTarget.id;
         var dayScroll = $('#day-pix').offset().top - 60;
         var weekScroll = $('#week-pix').offset().top - 60;
@@ -38,20 +39,24 @@ $(document).ready(function() {
         }
         switch (whichPix) {
             case "day":
-            $('html, body').animate({
-                scrollTop: dayScroll
-            }, 300);
-            break;
+            var dayScroll = $('#day-pix').offset().top - 60;
+            var weekScroll = $('#week-pix').offset().top - 60;
+                $('html, body').animate({
+                    scrollTop: dayScroll
+                }, 300);
+                break;
             case "week":
-            $('html, body').animate({
-                scrollTop: weekScroll
-            }, 300);
-            break;
+            var dayScroll = $('#day-pix').offset().top - 60;
+            var weekScroll = $('#week-pix').offset().top - 60;
+                $('html, body').animate({
+                    scrollTop: weekScroll
+                }, 300);
+                break;
             case "month":
-            $('html, body').animate({
-                scrollTop: monthScroll
-            }, 300);
-            break;
+                $('html, body').animate({
+                    scrollTop: monthScroll
+                }, 300);
+                break;
             default:
 
         }
@@ -71,6 +76,7 @@ $(document).ready(function() {
         var imageW = newImage.width;
         var imageH = newImage.height;
         var maxWH = windowW*0.8;
+        var sectionH = getSectionHeight(windowW);
         var imgT = parseInt($(dayImage).css('top').slice(0, -2));
         if (imageW > imageH) {
             console.log("+++ landscape +++");
@@ -90,6 +96,15 @@ $(document).ready(function() {
             $(dayImage).css('top', newT + 'px');
             $(dayImage).css('left', parseInt((320 - newW)/2) + 'px');
         }
+    }
+    function getSectionHeight(windowW) {
+        console.log("== getSectionHeight ==");
+        if(window.innerHeight > window.innerWidth){
+            console.log("+++ portrait +++");
+        } else {
+            console.log("+++ landscape +++");
+        }
+        return windowH;
     }
 
     initialize();

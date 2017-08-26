@@ -8,7 +8,7 @@ plum #1a0315
 shadow #535353
 ink #062f4f
 */
-/* =======  ======= general  ======= ======= */
+/* ======= ======= general ======= ======= */
 html, body {
   height: 100%;
   box-sizing: border-box; }
@@ -18,12 +18,132 @@ body {
   padding: 0;
   font-family: "Ariel", sans-serif; }
 
-/*  ======= ======= sections  ======= ======= */
-#content1 {
+#header {
+  position: fixed;
+  top: 0;
   width: 100%;
-  height: 30%; }
+  height: 60px;
+  margin: 0;
+  background-color: #88d317;
+  z-index: 9; }
 
-/*  ======= ======= responsive  ======= ======= */
+#header > div {
+  margin: 0; }
+
+/*  ======= ======= menu-btn ======= ======= */
+#toggle-menu {
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  color: #1a2930;
+  font-size: 1.6em;
+  background-size: 30px 30px;
+  background-color: #f0f0f0;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 6px; }
+
+#toggle-menu:focus {
+  outline: none; }
+
+/*  ======= ======= logo ======= ======= */
+#logo1, #logo2 {
+  float: right;
+  color: #1a2930;
+  font-size: 1.8em;
+  text-shadow: 0pt 0px 0pt black; }
+
+#logo1 {
+  margin: 12px 0 0 0;
+  font-family: 'Special Elite', cursive; }
+
+#logo2 {
+  margin: 10px 10px 0 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200; }
+
+/*  ======= ======= sections ======= ======= */
+.section {
+  height: 320px;
+  margin: 0; }
+
+.section-title {
+  position: relative;
+  height: 60px;
+  text-align: right;
+  margin: 0; }
+
+#title1, #title2 {
+  float: right;
+  color: #1a2930;
+  font-size: 1.8em;
+  margin: 12px 10px 0 0;
+  color: #88d317;
+  text-shadow: 0pt 0px 0pt black; }
+
+#title1 {
+  font-family: 'Special Elite', cursive; }
+
+#title2 {
+  margin: 10px 8px 0 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200; }
+
+/* ======= sections ======= */
+#pix-port {
+  width: 100%;
+  height: 260px;
+  overflow-y: scroll; }
+
+/* ======= side-menu ======= */
+#side-menu {
+  position: fixed;
+  clear: left;
+  width: 120px;
+  height: 320px;
+  top: 60px;
+  left: 0;
+  margin: 0;
+  margin-left: -120px;
+  background-color: #4717f6;
+  -webkit-transition: margin-left 500ms;
+  transition: margin-left 500ms; }
+
+#side-menu-table {
+  position: absolute;
+  clear: left;
+  width: 90%;
+  height: 120px;
+  margin: 10px 0;
+  margin-left: 7px;
+  border-collapse: separate;
+  border-spacing: 10px 10px; }
+
+#side-menu-table > tbody > tr {
+  height: 40px;
+  text-align: center;
+  color: #e5e2d1; }
+
+.menu-btn {
+  background-color: #0e0b16; }
+
+.mgmt-btn {
+  background-color: red; }
+
+.glyphicon-pencil, .glyphicon-flash, .glyphicon-file {
+  margin: 16px; }
+
+.glyph-color {
+  color: white; }
+
+#side-menu-table > tbody > tr > td > a {
+  color: inherit;
+  text-decoration: none; }
+
+/*  ======= ======= ======= responsive  ======= ======= ======= */
+/*  ======= ======= ======= responsive  ======= ======= ======= */
+/*  ======= ======= ======= responsive  ======= ======= ======= */
 /* ======= large ======= */
 @media (min-width: 1825px) {
   body {
@@ -43,94 +163,15 @@ body {
 /* ======= iPhone6:P to iPhone6:L ======= */
 @media (min-width: 321px) and (max-width: 668px) {
   body {
-    background-color: #88d317; } }
+    background-color: #6e3667; }
+
+  /* ======= general ======= */
+  .section {
+    height: 320px; } }
 /* ======= ======= ======= iPhone6:P ======= ======= ======= */
 /* ======= ======= ======= iPhone6:P ======= ======= ======= */
 /* ======= ======= ======= iPhone6:P ======= ======= ======= */
 @media (max-width: 320px) {
-  /* ======= general ======= */
-  body {
-    /*background-color: #6e3667;*/ }
-
-  #header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 60px;
-    margin: 0;
-    background-color: #88d317;
-    z-index: 9; }
-
-  #header > div {
-    margin: 0; }
-
-  .section {
-    height: 320px; }
-
-  /* ======= menu-btn ======= */
-  #toggle-menu {
-    float: left;
-    width: 40px;
-    height: 40px;
-    margin: 10px;
-    color: #1a2930;
-    font-size: 1.6em;
-    background-size: 30px 30px;
-    background-color: #f0f0f0;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 6px; }
-
-  #toggle-menu:focus {
-    outline: none; }
-
-  /* ======= logo ======= */
-  #logo1, #logo2 {
-    float: right;
-    color: #1a2930;
-    font-size: 1.8em;
-    text-shadow: 0pt 0px 0pt black; }
-
-  #logo1 {
-    margin: 12px 0 0 0;
-    font-family: 'Special Elite', cursive; }
-
-  #logo2 {
-    margin: 10px 10px 0 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 200; }
-
-  .section-title {
-    position: relative;
-    height: 60px;
-    text-align: right;
-    margin: 0; }
-
-  #title1, #title2 {
-    float: right;
-    color: #1a2930;
-    font-size: 1.8em;
-    margin: 5px 10px 0 0;
-    color: #88d317;
-    text-shadow: 0pt 0px 0pt black; }
-
-  #title1 {
-    font-family: 'Special Elite', cursive; }
-
-  #title2 {
-    margin: 3px 8px 0 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 200; }
-
-  /* ======= sections ======= */
-  .section {
-    margin: 0; }
-
-  #pix-port {
-    width: 100%;
-    height: 260px;
-    overflow-y: scroll; }
-
   /* ======= day-pix ======= */
   #day-header {
     height: 60px;
@@ -180,52 +221,7 @@ body {
   .month-grid-pic {
     width: 150px;
     height: auto;
-    margin: 20px; }
-
-  /* ======= side-menu ======= */
-  #side-menu {
-    position: fixed;
-    clear: left;
-    width: 120px;
-    height: 320px;
-    top: 60px;
-    left: 0;
-    margin: 0;
-    margin-left: -120px;
-    background-color: #4717f6;
-    -webkit-transition: margin-left 500ms;
-    transition: margin-left 500ms; }
-
-  #side-menu-table {
-    position: absolute;
-    clear: left;
-    width: 90%;
-    height: 120px;
-    margin: 10px 0;
-    margin-left: 7px;
-    border-collapse: separate;
-    border-spacing: 10px 10px; }
-
-  #side-menu-table > tbody > tr {
-    height: 40px;
-    text-align: center;
-    color: #e5e2d1; }
-
-  .menu-btn {
-    background-color: #0e0b16; }
-
-  .mgmt-btn {
-    background-color: red; }
-
-  .glyphicon-pencil, .glyphicon-flash, .glyphicon-file {
-    margin: 16px; }
-
-  .glyph-color {
-    color: white; }
-
-  #side-menu-table > tbody > tr > td > a {
-    color: inherit;
-    text-decoration: none; } }
+    margin: 20px; } }
 /*  ======= ======= ARCHIVE  ======= ======= */
 /*  ======= ======= ARCHIVE  ======= ======= */
 /*  ======= ======= ARCHIVE  ======= ======= */
