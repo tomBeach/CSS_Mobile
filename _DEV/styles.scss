@@ -1,0 +1,442 @@
+/* ======= themes ======= */
+// $theme: 'mobile';
+// $theme: 'tablet';
+// $theme: 'laptop';
+
+/* ======= colors ======= */
+$lime: #88d317;
+$violet: #6e3667;
+$fuchia: #a239ca;
+$ink: #062f4f;
+$void: #a239ca;
+$fuchia: #0e0b16;
+$jewel: #4717f6;
+$stark: #e7dfdd;
+$lime: #88d317;
+$plum: #1a0315;
+$shadow: #535353;
+$ink: #062f4f;
+
+/* ======= layout ======= */
+$headerH: 60px;
+$header_bg: $ink;
+$content_bg: $violet;
+$sm_section: 320px;
+
+/* ======= mixins ======= */
+@mixin section($theme) {
+    height: $sm_section;
+    margin: 0;
+    @if $theme == 'shared' {
+        border-color: green;
+    }
+}
+
+/*  ======= ======= sections ======= ======= */
+.section { @include section("shared"); }
+.section-title {
+    position: relative;
+    height: $headerH;
+    text-align: right;
+    margin: 0;
+}
+#title1, #title2 {
+    float: left;
+    color: #1a2930;
+    font-size: 1.8em;
+    color: $lime;
+    text-shadow: 0pt 0px 0pt rgb(0, 0, 0);
+}
+#title1 {
+    margin: 12px 10px 0 0;
+    font-family: 'Special Elite', cursive;
+}
+#title2 {
+    margin: 10px 6px 0 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+}
+/* ======= sections ======= */
+#pix-port {
+    width: 100%;
+    height: $sm_section - $headerH;
+    overflow-y: scroll;
+    // border: solid 2px black;
+}
+
+// @mixin shader($opacity) {
+//     opacity: $opacity;
+// }
+// @mixin shared {
+//   @if $theme == 'shared' {
+//       border-color: green;
+//   }
+// }
+// @mixin mobile {
+//   @if $theme == 'mobile' {
+//       border-color: red;
+//   }
+// }
+// @mixin tablet {
+//   @if $theme == 'tablet' {
+//       border-color: green;
+//   }
+// }
+// @mixin laptop {
+//   @if $theme == 'laptop' {
+//       border-color: green;
+//   }
+// }
+
+/* ======= components ======= */
+// $page-head:
+// $side-menu:
+// $content:
+// $section-head:
+// $section:
+// $pixbox_h:
+// $link_pixbox_h:
+// $pixbox_v:
+// $page-head:
+// $page-head:
+// $page-head:
+// $page-head:
+
+/* ======= mobile ======= */
+// @media (max-width: 320px) {
+//     #day-header {
+//         height: $headerH;
+//         background-color: $header_bg;
+//     }
+//     #day-pix {
+//         margin-top: $headerH;
+//         background-color: $pix_bg;
+//     }
+//     .pic {
+//         position: absolute;
+//         float: left;
+//         width: 80%;
+//         height: auto;
+//     }
+//     #week-header {
+//         height: $headerH;
+//         background-color: #9030b5;
+//     }
+//     #week-pix {
+//         background-color: $fuchia;
+//     }
+//     #week-grid {
+//         display: flex;
+//         flex-direction: row;
+//         flex-wrap: nowrap;
+//         justify-content: space-between;
+//         align-items: center;
+//         align-content: space-around;
+//         height: $sm_section*0.8-20;
+//     }
+//     .week-grid-pic {
+//         width: 200px;
+//         height: auto;
+//         margin: 20px;
+//         border: solid 1px white;
+//     }
+//     #month-header {
+//         height: $headerH;
+//         background-color: #052b47;
+//     }
+//     #month-pix {
+//         background-color: $ink;
+//     }
+//     .month-grid-pic {
+//         width: 150px;
+//         height: auto;
+//         margin: 20px;
+//     }
+// }
+
+/* ======= shared ======= */
+// .section {
+//     height: $sm_section;
+//     margin: 0;
+// }
+// .section-title {
+//     position: relative;
+//     height: $headerH;
+//     text-align: right;
+//     margin: 0;
+// }
+// #title1, #title2 {
+//     float: right;
+//     color: #1a2930;
+//     font-size: 1.8em;
+//     margin: 12px 10px 0 0;
+//     color: $lime;
+//     text-shadow: 0pt 0px 0pt rgb(0, 0, 0);
+// }
+// #title1 {
+//     font-family: 'Special Elite', cursive;
+// }
+// #title2 {
+//     margin: 10px 8px 0 0;
+//     font-family: 'Roboto', sans-serif;
+//     font-weight: 200;
+// }
+// #pix-port {
+//     width: 100%;
+//     height: $sm_section - $headerH;
+//     overflow-y: scroll;
+// }
+
+/* ======= ======= ======= layout ======= ======= ======= */
+/* ======= ======= ======= layout ======= ======= ======= */
+/* ======= ======= ======= layout ======= ======= ======= */
+
+html, body {
+    height: 100%;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Ariel", sans-serif;
+}
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $headerH;
+    margin: 0;
+    background-color: $lime;
+    z-index: 9;
+}
+#header > div {
+    margin: 0;
+}
+
+/*  ======= ======= menu-btn ======= ======= */
+#toggle-menu {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    color: #1a2930;
+    font-size: 1.6em;
+    background-size: 30px 30px;
+    background-color:  #f0f0f0;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 6px;
+}
+#toggle-menu:focus {
+    outline: none;
+}
+/*  ======= ======= logo ======= ======= */
+#logo1, #logo2 {
+    float: right;
+    color: #1a2930;
+    font-size: 1.8em;
+    text-shadow: 0pt 0px 0pt rgb(0, 0, 0);
+}
+#logo1 {
+    margin: 12px 0 0 0;
+    font-family: 'Special Elite', cursive;
+}
+#logo2 {
+    margin: 10px 10px 0 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+}
+
+/* ======= side-menu ======= */
+#side-menu {
+    position: fixed;
+    clear: left;
+    width: 120px;
+    height: $sm_section;
+    top: $headerH;
+    left: 0;
+    margin: 0;
+    margin-left: -120px;
+    background-color: #4717f6;
+    -webkit-transition: margin-left 500ms;
+    transition: margin-left 500ms;
+}
+#side-menu-table {
+    position: absolute;
+    clear: left;
+    width: 90%;
+    height: 120px;
+    margin: 10px 0;
+    margin-left: 7px;
+    border-collapse: separate;
+    border-spacing: 10px 10px;
+}
+#side-menu-table > tbody > tr {
+    height: 40px;
+    text-align: center;
+    color: #e5e2d1;
+}
+.menu-btn {
+    background-color: #0e0b16;
+}
+.mgmt-btn {
+    background-color: red;
+}
+.glyphicon-pencil, .glyphicon-flash, .glyphicon-file {
+    margin: 16px;
+}
+.glyph-color {
+    color: white;
+}
+#side-menu-table > tbody > tr > td > a {
+    color: inherit;
+    text-decoration: none;
+    // text-shadow: 0pt 0px 0pt rgb(0, 0, 0);
+}
+
+/*  ======= ======= ======= responsive  ======= ======= ======= */
+/*  ======= ======= ======= responsive  ======= ======= ======= */
+/*  ======= ======= ======= responsive  ======= ======= ======= */
+
+/* ======= ======= ======= iPhone6:P ======= ======= ======= */
+@media (max-width: 320px) {
+    /* ======= day-pix ======= */
+    #day-header {
+        height: $headerH;
+        background-color: #673260;
+    }
+    #day-content {
+        margin-top: $headerH;
+        background-color: $violet;
+    }
+    .pic {
+        position: absolute;
+        float: left;
+        width: 80%;
+        height: auto;
+    }
+
+    /* ======= week-content ======= */
+    #week-header {
+        height: $headerH;
+        background-color: #9030b5;
+    }
+    #week-content {
+        background-color: $fuchia;
+    }
+    #week-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: space-around;
+        height: $sm_section*0.8-20;
+        // background-color: $fuchia;
+    }
+    .week-grid-pic {
+        width: 200px;
+        height: auto;
+        margin: 20px;
+        border: solid 1px white;
+    }
+
+    /* ======= month-content ======= */
+    #month-header {
+        height: $headerH;
+        background-color: #052b47;
+    }
+    #month-content {
+        background-color: $ink;
+    }
+    .month-grid-pic {
+        width: 150px;
+        height: auto;
+        margin: 20px;
+    }
+
+}
+
+/* ======= ======= ======= tablet:L ======= ======= ======= */
+@media (min-width: 321px) and (max-width: 668px) {
+    body {
+        background-color: $violet;
+    }
+    /* ======= general ======= */
+    .section {
+        height: $sm_section;
+    }
+    #day-header {
+        height: $headerH;
+        background-color: #673260;
+    }
+    #day-content {
+        margin-top: $headerH;
+        background-color: $violet;
+    }
+    .pic {
+        position: absolute;
+        float: left;
+        width: 80%;
+        height: auto;
+    }
+}
+
+
+
+
+/* ======= large ======= */
+@media (min-width: 1825px) {
+    body {
+        background-color: #1a0315;
+    }
+}
+/* ======= laptop to large ======= */
+@media (min-width: 1224px) and (max-width: 1824px) {
+    body {
+        background-color: #6e3667;
+    }
+}
+
+/* ======= tablet:L to laptop ======= */
+@media (min-width: 1024px) and (max-width: 1223px) {
+    body {
+        background-color: #535353;
+    }
+}
+
+/* ======= iPhone6:L to tablet:P ======= */
+@media (min-width: 669px) and (max-width: 1023px) {
+    body {
+        background-color: #1a0315;
+    }
+}
+
+/* ======= iPhone6:P to iPhone6:L ======= */
+@media (min-width: 321px) and (max-width: 668px) {
+    body {
+        background-color: $violet;
+    }
+    /* ======= general ======= */
+    .section {
+        height: $sm_section;
+    }
+    #day-header {
+        height: $headerH;
+        background-color: #673260;
+    }
+    #day-content {
+        margin-top: $headerH;
+        background-color: $violet;
+    }
+    .pic {
+        position: absolute;
+        float: left;
+        width: 80%;
+        height: auto;
+    }
+}
+
+/*  ======= ======= ARCHIVE  ======= ======= */
+/*  ======= ======= ARCHIVE  ======= ======= */
+/*  ======= ======= ARCHIVE  ======= ======= */

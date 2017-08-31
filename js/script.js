@@ -76,7 +76,7 @@ $(document).ready(function() {
         var imageW = newImage.width;
         var imageH = newImage.height;
         var maxWH = windowW*0.8;
-        var sectionH = getSectionHeight(windowW);
+        // var sectionH = getSectionHeight(windowW);
         var imgT = parseInt($(dayImage).css('top').slice(0, -2));
         if (imageW > imageH) {
             console.log("+++ landscape +++");
