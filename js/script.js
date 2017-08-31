@@ -7,7 +7,7 @@ $(document).ready(function() {
         $('.menu-btn[0]').on('mousedown', toggleMenuLink);
         $('.menu-btn').on('mousedown', toggleMenuLink);
         // $('.menu-btn').on('mouseup', toggleMenuLink);
-        $('#toggle-menu').on('mousedown', toggleMenu);
+        $('#toggle-menu-btn').on('mousedown', toggleMenu);
     }
     function toggleMenu() {
         console.log("== toggleMenu ==");
@@ -63,39 +63,39 @@ $(document).ready(function() {
     }
     function checkImageWH(imageId) {
         console.log("== checkImageWH ==");
-        // Get image
-        var dayImage = $("#" + imageId);
-        console.log("dayImage:", dayImage);
-
-        // Create new image to test
-        var newImage = new Image();
-        newImage.src = dayImage.attr("src");
-
-        // Get accurate measurements from that.
-        var windowW = $(window).width();
-        var imageW = newImage.width;
-        var imageH = newImage.height;
-        var maxWH = windowW*0.8;
-        // var sectionH = getSectionHeight(windowW);
-        var imgT = parseInt($(dayImage).css('top').slice(0, -2));
-        if (imageW > imageH) {
-            console.log("+++ landscape +++");
-            var newH = parseInt((maxWH*imageH)/imageW);
-            var topOffset = parseInt((320 - newH)/2);
-            console.log("topOffset:", topOffset);
-            var newT = imgT;
-            $(dayImage).css('width', maxWH + 'px');
-            $(dayImage).css('height', 'auto');
-            $(dayImage).css('top', newT + 'px');
-            $(dayImage).css('left', parseInt((320 - maxWH)/2) + 'px');
-        } else {
-            console.log("+++ portrait +++");
-            var newW = parseInt((maxWH*imageW)/imageH);
-            $(dayImage).css('width', newW + 'px');
-            $(dayImage).css('height', maxWH + 'px');
-            $(dayImage).css('top', newT + 'px');
-            $(dayImage).css('left', parseInt((320 - newW)/2) + 'px');
-        }
+        // // Get image
+        // var dayImage = $("#" + imageId);
+        // console.log("dayImage:", dayImage);
+        //
+        // // Create new image to test
+        // var newImage = new Image();
+        // newImage.src = dayImage.attr("src");
+        //
+        // // Get accurate measurements from that.
+        // var windowW = $(window).width();
+        // var imageW = newImage.width;
+        // var imageH = newImage.height;
+        // var maxWH = windowW*0.8;
+        // // var sectionH = getSectionHeight(windowW);
+        // var imgT = parseInt($(dayImage).css('top').slice(0, -2));
+        // if (imageW > imageH) {
+        //     console.log("+++ landscape +++");
+        //     var newH = parseInt((maxWH*imageH)/imageW);
+        //     var topOffset = parseInt((320 - newH)/2);
+        //     console.log("topOffset:", topOffset);
+        //     var newT = imgT;
+        //     $(dayImage).css('width', maxWH + 'px');
+        //     $(dayImage).css('height', 'auto');
+        //     $(dayImage).css('top', newT + 'px');
+        //     $(dayImage).css('left', parseInt((320 - maxWH)/2) + 'px');
+        // } else {
+        //     console.log("+++ portrait +++");
+        //     var newW = parseInt((maxWH*imageW)/imageH);
+        //     $(dayImage).css('width', newW + 'px');
+        //     $(dayImage).css('height', maxWH + 'px');
+        //     $(dayImage).css('top', newT + 'px');
+        //     $(dayImage).css('left', parseInt((320 - newW)/2) + 'px');
+        // }
     }
     function getSectionHeight(windowW) {
         console.log("== getSectionHeight ==");
