@@ -4,21 +4,43 @@ $(document).ready(function() {
 
     function initialize() {
         console.log("== initialize ==");
-        $('#toggle-menu-btn').on('mousedown', toggleMenu);
-        console.log("window.innerWidth:", window.innerWidth);
-        console.log("window.innerHeight:", window.innerHeight);
         if (window.innerWidth < 321) {
-            checkImageWH("D_pic");
+            setPicSize("D_pic");
+        }
+        activateButtons();
+    }
+    function selectPic(e) {
+        console.log("== selectPic ==");
+        if ($('#' + e.currentTarget.id).attr('class') == 'M_pic') {
+            console.log("== M_pic ==");
+            $('#NED_header').css('display', 'block');
+            $('html, body').animate({
+                scrollTop: $('#NED_header').offset().top - 60
+            }, 300);
+        }
+    }
+    function activateButtons() {
+        console.log("== activateButtons ==");
+        $('#toggle-menu-btn').on('mousedown', toggleMenu);
+        $('img').on('mousedown', selectPic);
+        $('#edit').on('mousedown', toggleNED);
+    }
+    function toggleNED() {
+        console.log("== toggleNED ==");
+        if ($('#NED').css('display') == 'none') {
+            toggleMenu();
+            $('#NED').css('display', 'block');
+            $('#close').on('mousedown', toggleNED);
+        } else {
+            $('#NED').css('display', 'none');
+            $('#close').off('mousedown', toggleNED);
         }
     }
     function toggleMenu() {
         console.log("== toggleMenu ==");
         if ($('#side-menu').css('margin-left') == '-120px') {
             $('#side-menu').css('margin-left', '0');
-            // == activate benu buttons
-            // $('.menu-btn[0]').on('mousedown', toggleMenuLink);
             $('.menu-btn').on('mousedown', toggleMenuLink);
-            // $('.menu-btn').on('mouseup', toggleMenuLink);
         } else {
             $('#side-menu').css('margin-left', '-120px');
         }
@@ -64,53 +86,55 @@ $(document).ready(function() {
     }
     function checkImageWH(imageId) {
         console.log("== checkImageWH ==");
-        // == Get image
+        // == get selected image
         var dayImage = $("#" + imageId);
-        var dayBox = $("#D_picBox");
         console.log("dayImage:", dayImage);
 
-        // == Create new image to test
+        // == create new image to test HW
         var newImage = new Image();
         newImage.src = dayImage.attr("src");
 
-        // == Get accurate measurements from that.
+        // == get measurements of newImage
         var windowW = $(window).width();
         var imageW = newImage.width;
         var imageH = newImage.height;
         var maxWH = windowW*0.8;
-        // var sectionH = getSectionHeight(windowW);
-        console.log("$(dayBox).css('top'):", $(dayBox).css('top'));
+        return [imageW, imageH, maxWH]
+    }
+    function setPicSize(imageId) {
+        console.log("== setPicSize ==");
 
-        // == get top px (remove "px" from top value string)
+        // == set pic WH for proper centering and aspect
+        var picData = checkImageWH(imageId);
+
+        // == pic container div
+        var dayBox = $("#D_pixBox");
+
+        // == get top px integer (remove "px" from top value string)
         var imgT = parseInt($(dayBox).css('top').slice(0, -2));
-        if (imageW > imageH) {
+
+        // == handle landscape images
+        if (picData[0] > picData[1]) {
             console.log("+++ landscape +++");
-            var newH = parseInt((maxWH*imageH)/imageW);
+            var newH = parseInt((picData[2]*picData[1])/picData[0]);
             var topOffset = parseInt((320 - newH)/2);
             console.log("topOffset:", topOffset);
             var newT = imgT;
-            $(dayBox).css('width', maxWH + 'px');
+            $(dayBox).css('width', picData[2] + 'px');
             $(dayBox).css('height', 'auto');
             $(dayBox).css('top', newT + 'px');
-            $(dayBox).css('left', parseInt((320 - maxWH)/2) + 'px');
+            $(dayBox).css('left', parseInt((320 - picData[2])/2) + 'px');
+
+        // == handle portrait images
         } else {
             console.log("+++ portrait +++");
-            var newW = parseInt((maxWH*imageW)/imageH);
+            var newW = parseInt((picData[2]*imageW)/picData[1]);
             $(dayBox).css('width', newW + 'px');
-            $(dayBox).css('height', maxWH + 'px');
+            $(dayBox).css('height', picData[2] + 'px');
             $(dayBox).css('top', newT + 'px');
             $(dayBox).css('left', parseInt((320 - newW)/2) + 'px');
         }
     }
-    // function getSectionHeight(windowW) {
-    //     console.log("== getSectionHeight ==");
-    //     if(window.innerHeight > window.innerWidth){
-    //         console.log("+++ portrait +++");
-    //     } else {
-    //         console.log("+++ landscape +++");
-    //     }
-    //     return windowH;
-    // }
 
     initialize();
 });

@@ -114,6 +114,90 @@ body {
   margin-top: 60px;
   background-color: #4717f6; }
 
+#NED {
+  display: none;
+  position: fixed;
+  float: left;
+  width: 300px;
+  height: auto;
+  top: 60px;
+  left: 10px;
+  margin-top: 0;
+  background-color: #88d317;
+  -webkit-transition: margin-left 500ms;
+  transition: margin-left 500ms;
+  box-shadow: 4px 4px 4px #000; }
+
+#NED_header {
+  text-align: center;
+  height: 40px;
+  background-color: #4717f6; }
+
+.NED_link {
+  display: inline-block;
+  margin: 5px 10px;
+  font-size: 1.6em;
+  font-family: 'Special Elite', cursive;
+  font-weight: 700;
+  color: white; }
+
+#close {
+  margin: 5px 0 5px 30px;
+  color: red; }
+
+#NED_content {
+  height: 240px;
+  background-color: #88d317; }
+
+#NED_pixBox {
+  width: 220px;
+  height: auto;
+  margin: 10px auto; }
+
+#NED_pic {
+  width: 100%;
+  height: 100%; }
+
+/* ======= day ======= */
+#D_header {
+  background-color: #96858f; }
+
+#D_content {
+  background-color: #6d7993; }
+
+#D_pixBox {
+  background-color: #9099a2; }
+
+/* ======= week ======= */
+#W_header {
+  background-color: #d5d5d5; }
+
+#W_content {
+  background-color: #062f4f; }
+
+#W_pixBox {
+  background-color: #813772; }
+
+/* ======= month ======= */
+#M_header {
+  background-color: #b82601; }
+
+#M_content {
+  background-color: #945d60; }
+
+#M_pixBox {
+  background-color: #626e60; }
+
+/* ======= year ======= */
+#Y_header {
+  background-color: #af473c; }
+
+#Y_content {
+  background-color: #cad0c8; }
+
+#Y_pixBox {
+  background-color: #1fb58f; }
+
 /*  ======= ======= RESPONSIVE  ======= ======= */
 /*  ======= ======= RESPONSIVE  ======= ======= */
 /*  ======= ======= RESPONSIVE  ======= ======= */
@@ -122,18 +206,17 @@ body {
   .section {
     top: 0;
     position: relative;
-    height: 240px;
-    background-color: red; }
+    height: 240px; }
 
   .section-header {
     position: relative;
     top: 0;
     height: 40px;
-    margin: 0;
-    background-color: #88d317; }
+    margin: 0; }
 
   .section-content {
-    height: 240px;
+    position: relative;
+    height: calc(100% - 40px);
     margin: 0; }
 
   .title1 {
@@ -150,78 +233,55 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 200; }
 
+  /* ======= day ======= */
   #D_pixBox {
-    position: absolute;
-    float: left;
-    width: 80%;
-    height: auto; }
+    position: absolute; }
 
-  #D_pic {
+  .D_pic {
     width: 100%;
     height: 100%; }
 
+  /* ======= week ======= */
+  #W_content {
+    overflow-x: scroll; }
+
   #W_pixBox {
     float: left;
-    width: 840px;
-    height: 100px;
-    margin: 10px; }
+    width: calc((120px * 7) + (20px * 7));
+    height: 100%;
+    margin: 0; }
 
-  #W_pic {
-    width: 100px;
+  .W_pic {
+    float: left;
+    width: 120px;
     height: auto;
     margin: 10px; }
 
-  #M_pixBox {
-    float: left;
-    width: 840px;
-    height: 120px;
-    margin: 10px; }
-
-  #Y_pixBox {
-    float: left;
-    width: 160px;
-    height: 140px;
-    margin: 10px; }
-
-  /* ======= day ======= */
-  #D_header {
-    background-color: #96858f; }
-
-  #D_content {
-    background-color: #6d7993; }
-
-  #D_pixBox {
-    background-color: #9099a2; }
-
-  /* ======= week ======= */
-  #W_header {
-    background-color: #d5d5d5; }
-
-  #W_content {
-    background-color: #062f4f; }
-
-  #W_pixBox {
-    background-color: #813772; }
-
   /* ======= month ======= */
-  #M_header {
-    background-color: #b82601; }
-
   #M_content {
-    background-color: #945d60; }
+    overflow-x: scroll; }
 
   #M_pixBox {
-    background-color: #626e60; }
+    float: left;
+    width: calc((120px * 7) + (20px * 7));
+    height: 100%;
+    margin: 0; }
+
+  .M_pic {
+    float: left;
+    width: 120px;
+    height: auto;
+    margin: 10px; }
 
   /* ======= year ======= */
-  #Y_header {
-    background-color: #af473c; }
-
-  #Y_content {
-    background-color: #cad0c8; }
-
   #Y_pixBox {
-    background-color: #1fb58f; } }
+    width: 160px;
+    margin: 0; }
+
+  .Y_pic {
+    width: 100px;
+    height: auto;
+    margin: 10px; } }
 /* ======= ======= ======= tablet:L ======= ======= ======= */
 @media (min-width: 321px) and (max-width: 668px) {
   .section {
@@ -255,51 +315,63 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 200; }
 
-  .pixBox {
-    float: left;
-    width: 100px;
-    height: 80px;
+  .D_pic {
+    width: 120px;
+    height: auto;
     margin: 10px; }
 
-  /* ======= day ======= */
-  #D_header {
-    background-color: #96858f; }
-
-  #D_content {
-    background-color: #6d7993; }
-
-  #D_pixBox {
-    background-color: #9099a2; }
-
   /* ======= week ======= */
-  #W_header {
-    background-color: #d5d5d5; }
-
   #W_content {
-    background-color: #062f4f; }
+    overflow-x: scroll; }
 
   #W_pixBox {
-    background-color: #813772; }
+    float: left;
+    width: calc((120px * 7) + (20px * 7));
+    height: 100%;
+    margin: 0; }
+
+  .W_pic {
+    float: left;
+    width: 120px;
+    height: auto;
+    margin: 10px; }
 
   /* ======= month ======= */
-  #M_header {
-    background-color: #b82601; }
-
   #M_content {
-    background-color: #945d60; }
+    overflow-x: scroll; }
 
   #M_pixBox {
-    background-color: #626e60; }
+    float: left;
+    width: calc((120px * 7) + (20px * 7));
+    height: 100%;
+    margin: 0;
+    overflow-y: hidden; }
+
+  .M_pic {
+    float: left;
+    width: 120px;
+    height: auto;
+    margin: 10px; }
+
+  .M_pic {
+    float: left;
+    width: 120px;
+    height: auto;
+    margin: 10px; }
 
   /* ======= year ======= */
-  #Y_header {
-    background-color: #af473c; }
-
-  #Y_content {
-    background-color: #cad0c8; }
-
   #Y_pixBox {
-    background-color: #1fb58f; } }
+    float: left;
+    width: calc((120px * 7) + (20px * 7));
+    height: auto;
+    margin: 0;
+    overflow-y: hidden; }
+
+  .Y_pic {
+    float: left;
+    width: 120px;
+    height: auto;
+    margin: 10px; } }
 /* ======= NED ======= */
 /*  ======= ======= ARCHIVE  ======= ======= */
 /*  ======= ======= ARCHIVE  ======= ======= */

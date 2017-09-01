@@ -65,6 +65,7 @@ $Y_content_bg: $violet;
 
 $mobile_headerH: 40px;
 $mobile_sectionH: 240px;
+$mobile_sectionW: 320px;
 $mobile_D_pixBoxW: 80%;
 $mobile_W_pixBoxW: 700px;
 $mobile_M_pixBoxW: 700px;
@@ -202,10 +203,101 @@ body {
     margin-top: $page_headerH;
     background-color: $jewel;
 }
+#NED {
+    display: none;
+    position: fixed;
+    float: left;
+    width: 300px;
+    height: auto;
+    top: $page_headerH;
+    left: 10px;
+    margin-top: 0;
+    background-color: $lime;
+    -webkit-transition: margin-left 500ms;
+    transition: margin-left 500ms;
+    box-shadow: 4px 4px 4px #000;
+}
+#NED_header {
+    text-align: center;
+    height: $mobile_headerH;
+    background-color: $jewel;
+}
+.NED_link {
+    display: inline-block;
+    margin: 5px 10px;
+    font-size: 1.6em;
+    font-family: 'Special Elite', cursive;
+    font-weight: 700;
+    color: white;
+}
+#close {
+    margin: 5px 0 5px 30px;
+    color: red;
+}
+#NED_content {
+    height: $mobile_sectionH;
+    background-color: $lime;
+}
+#NED_pixBox {
+    width: 220px;
+    height: auto;
+    margin: 10px auto;
+}
+#NED_pic {
+    width: 100%;
+    height: 100%;
+}
+
+/* ======= day ======= */
+#D_header {
+    background-color: $dusty;
+}
+#D_content {
+    background-color: $lavendar;
+}
+#D_pixBox {
+    background-color: $overcast;
+}
+
+/* ======= week ======= */
+#W_header {
+    background-color: $paper;
+}
+#W_content {
+    background-color: $ink;
+}
+#W_pixBox {
+    background-color: $posy;
+}
+
+/* ======= month ======= */
+#M_header {
+    background-color: $embers;
+}
+#M_content {
+    background-color: $terracotta;
+}
+#M_pixBox {
+    background-color: $herb;
+}
+
+/* ======= year ======= */
+#Y_header {
+    background-color: $chilli;
+}
+#Y_content {
+    background-color: $sage;
+}
+#Y_pixBox {
+    background-color: $ocean;
+}
+
+
 
 /*  ======= ======= RESPONSIVE  ======= ======= */
 /*  ======= ======= RESPONSIVE  ======= ======= */
 /*  ======= ======= RESPONSIVE  ======= ======= */
+
 
 /* ======= ======= ======= iPhone6:P ======= ======= ======= */
 @media (max-width: 320px) {
@@ -213,17 +305,16 @@ body {
         top: 0;
         position: relative;
         height: $mobile_sectionH;
-        background-color: red;
     }
     .section-header {
         position: relative;
         top: 0;
         height: $mobile_headerH;
         margin: 0;
-        background-color: $lime;
     }
     .section-content {
-        height: $mobile_sectionH;
+        position: relative;
+        height: calc(100% - 40px);
         margin: 0;
     }
     .title1 {
@@ -240,85 +331,59 @@ body {
         font-family: 'Roboto', sans-serif;
         font-weight: 200;
     }
+
+    /* ======= day ======= */
     #D_pixBox {
         position: absolute;
-        float: left;
-        width: $mobile_D_pixBoxW;
-        height: auto;
-        // margin: 10% auto;
     }
-    #D_pic {
+    .D_pic {
         width: 100%;
         height: 100%;
     }
-    #W_pixBox {
-        // width: auto;
-        float: left;
-        width: 840px;
-        height: 100px;
-        margin: 10px;
+
+    /* ======= week ======= */
+    #W_content {
+        overflow-x: scroll;
     }
-    #W_pic {
-        width: 100px;
+    #W_pixBox {
+        float: left;
+        width: calc((120px * 7) + (20px * 7));
+        height: 100%;
+        margin: 0;
+    }
+    .W_pic {
+        float: left;
+        width: 120px;
         height: auto;
         margin: 10px;
     }
-    #M_pixBox {
-        // width: auto;
-        float: left;
-        width: 840px;
-        height: 120px;
-        margin: 10px;
-    }
-    #Y_pixBox {
-        // width: auto;
-        float: left;
-        width: 160px;
-        height: 140px;
-        margin: 10px;
-    }
-    /* ======= day ======= */
-    #D_header {
-        background-color: $dusty;
-    }
-    #D_content {
-        background-color: $lavendar;
-    }
-    #D_pixBox {
-        background-color: $overcast;
-    }
-
-    /* ======= week ======= */
-    #W_header {
-        background-color: $paper;
-    }
-    #W_content {
-        background-color: $ink;
-    }
-    #W_pixBox {
-        background-color: $posy;
-    }
 
     /* ======= month ======= */
-    #M_header {
-        background-color: $embers;
-    }
     #M_content {
-        background-color: $terracotta;
+        overflow-x: scroll;
     }
     #M_pixBox {
-        background-color: $herb;
+        float: left;
+        width: calc((120px * 7) + (20px * 7));
+        height: 100%;
+        margin: 0;
+    }
+    .M_pic {
+        float: left;
+        width: 120px;
+        height: auto;
+        margin: 10px;
     }
 
     /* ======= year ======= */
-    #Y_header {
-        background-color: $chilli;
-    }
-    #Y_content {
-        background-color: $sage;
-    }
     #Y_pixBox {
-        background-color: $ocean;
+        width: 160px;
+        margin: 0;
+    }
+    .Y_pic {
+        width: 100px;
+        height: auto;
+        margin: 10px;
     }
 }
 
@@ -327,7 +392,6 @@ body {
     .section {
         margin-top: 20px;
         position: relative;
-        // width: 100%;
         height: $tablet_sectionH;
         background-color: red;
     }
@@ -356,55 +420,69 @@ body {
         font-family: 'Roboto', sans-serif;
         font-weight: 200;
     }
-    .pixBox {
-        // width: auto;
-        float: left;
-        width: 100px;
-        height: 80px;
+    .D_pic {
+        width: 120px;
+        height: auto;
         margin: 10px;
-    }
-    /* ======= day ======= */
-    #D_header {
-        background-color: $dusty;
-    }
-    #D_content {
-        background-color: $lavendar;
-    }
-    #D_pixBox {
-        background-color: $overcast;
     }
 
     /* ======= week ======= */
-    #W_header {
-        background-color: $paper;
-    }
     #W_content {
-        background-color: $ink;
+        overflow-x: scroll;
     }
     #W_pixBox {
-        background-color: $posy;
+        float: left;
+        width: calc((120px * 7) + (20px * 7));
+        height: 100%;
+        margin: 0;
+    }
+    .W_pic {
+        float: left;
+        width: 120px;
+        height: auto;
+        margin: 10px;
     }
 
     /* ======= month ======= */
-    #M_header {
-        background-color: $embers;
-    }
     #M_content {
-        background-color: $terracotta;
+        overflow-x: scroll;
     }
     #M_pixBox {
-        background-color: $herb;
+        float: left;
+        width: calc((120px * 7) + (20px * 7));
+        height: 100%;
+        margin: 0;
+        overflow-y: hidden;
+    }
+    .M_pic {
+        float: left;
+        width: 120px;
+        height: auto;
+        margin: 10px;
+    }
+    .M_pic {
+        float: left;
+        width: 120px;
+        height: auto;
+        margin: 10px;
     }
 
     /* ======= year ======= */
-    #Y_header {
-        background-color: $chilli;
-    }
-    #Y_content {
-        background-color: $sage;
-    }
+    // #Y_content {
+    //     overflow-x: scroll;
+    // }
     #Y_pixBox {
-        background-color: $ocean;
+        float: left;
+        width: calc((120px * 7) + (20px * 7));
+        height: auto;
+        margin: 0;
+        overflow-y: hidden;
+    }
+    .Y_pic {
+        float: left;
+        width: 120px;
+        height: auto;
+        margin: 10px;
     }
 }
 /* ======= NED ======= */
