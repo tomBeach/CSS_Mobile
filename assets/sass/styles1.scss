@@ -63,14 +63,26 @@ $W_content_bg: $violet;
 $M_content_bg: $violet;
 $Y_content_bg: $violet;
 
-$mobile_headerH: 60px;
-$mobile_sectionH: 320px;
+$mobile_headerH: 40px;
+$mobile_sectionH: 240px;
+$mobile_D_pixBoxW: 80%;
+$mobile_W_pixBoxW: 700px;
+$mobile_M_pixBoxW: 700px;
+$mobile_Y_pixBoxW: 320px;
 
-$tablet_headerH: 20%;
+$tablet_headerH: 30%;
 $tablet_sectionH: 120px;
+$tablet_D_pixBoxW: 100%;
+$tablet_W_pixBoxW: 100%;
+$tablet_M_pixBoxW: 100%;
+$tablet_Y_pixBoxW: 100%;
 
 $laptop_headerH: 20%;
 $laptop_sectionH: 20%;
+$laptop_D_pixBoxW: 100%;
+$laptop_W_pixBoxW: 100%;
+$laptop_M_pixBoxW: 100%;
+$laptop_Y_pixBoxW: 100%;
 
 /* ======= layout ======= */
 html, body {
@@ -196,12 +208,10 @@ body {
 /*  ======= ======= RESPONSIVE  ======= ======= */
 
 /* ======= ======= ======= iPhone6:P ======= ======= ======= */
-/* ======= ======= ======= iPhone6:P ======= ======= ======= */
 @media (max-width: 320px) {
     .section {
-        margin-top: 20px;
+        top: 0;
         position: relative;
-        // width: 100%;
         height: $mobile_sectionH;
         background-color: red;
     }
@@ -217,20 +227,98 @@ body {
         margin: 0;
     }
     .title1 {
-        margin: 12px 10px 0 0;
+        display: inline-block;
+        margin: 0 10px 0 0;
+        font-size: 1.6em;
         font-family: 'Special Elite', cursive;
+        font-weight: 700;
     }
     .title2 {
-        margin: 10px 6px 0 10px;
+        display: inline-block;
+        margin: 0 6px 0 10px;
+        font-size: 1.6em;
         font-family: 'Roboto', sans-serif;
         font-weight: 200;
     }
-    .pixBox {
+    #D_pixBox {
+        position: absolute;
+        float: left;
+        width: $mobile_D_pixBoxW;
+        height: auto;
+        // margin: 10% auto;
+    }
+    #D_pic {
+        width: 100%;
+        height: 100%;
+    }
+    #W_pixBox {
         // width: auto;
         float: left;
-        width: 100px;
-        height: 80px;
+        width: 840px;
+        height: 100px;
         margin: 10px;
+    }
+    #W_pic {
+        width: 100px;
+        height: auto;
+        margin: 10px;
+    }
+    #M_pixBox {
+        // width: auto;
+        float: left;
+        width: 840px;
+        height: 120px;
+        margin: 10px;
+    }
+    #Y_pixBox {
+        // width: auto;
+        float: left;
+        width: 160px;
+        height: 140px;
+        margin: 10px;
+    }
+    /* ======= day ======= */
+    #D_header {
+        background-color: $dusty;
+    }
+    #D_content {
+        background-color: $lavendar;
+    }
+    #D_pixBox {
+        background-color: $overcast;
+    }
+
+    /* ======= week ======= */
+    #W_header {
+        background-color: $paper;
+    }
+    #W_content {
+        background-color: $ink;
+    }
+    #W_pixBox {
+        background-color: $posy;
+    }
+
+    /* ======= month ======= */
+    #M_header {
+        background-color: $embers;
+    }
+    #M_content {
+        background-color: $terracotta;
+    }
+    #M_pixBox {
+        background-color: $herb;
+    }
+
+    /* ======= year ======= */
+    #Y_header {
+        background-color: $chilli;
+    }
+    #Y_content {
+        background-color: $sage;
+    }
+    #Y_pixBox {
+        background-color: $ocean;
     }
 }
 
@@ -255,11 +343,16 @@ body {
         margin: 0;
     }
     .title1 {
-        margin: 12px 10px 0 0;
+        display: inline-block;
+        margin: 0 10px 0 0;
+        font-size: 1.6em;
         font-family: 'Special Elite', cursive;
+        font-weight: 700;
     }
     .title2 {
-        margin: 10px 6px 0 10px;
+        display: inline-block;
+        margin: 2px 6px 0 10px;
+        font-size: 1.6em;
         font-family: 'Roboto', sans-serif;
         font-weight: 200;
     }
@@ -277,7 +370,7 @@ body {
     #D_content {
         background-color: $lavendar;
     }
-    #D_picBox {
+    #D_pixBox {
         background-color: $overcast;
     }
 
@@ -288,7 +381,7 @@ body {
     #W_content {
         background-color: $ink;
     }
-    #W_picBox {
+    #W_pixBox {
         background-color: $posy;
     }
 
@@ -299,7 +392,7 @@ body {
     #M_content {
         background-color: $terracotta;
     }
-    #M_picBox {
+    #M_pixBox {
         background-color: $herb;
     }
 
@@ -310,7 +403,7 @@ body {
     #Y_content {
         background-color: $sage;
     }
-    #Y_picBox {
+    #Y_pixBox {
         background-color: $ocean;
     }
 }

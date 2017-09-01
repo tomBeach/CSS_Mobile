@@ -118,39 +118,110 @@ body {
 /*  ======= ======= RESPONSIVE  ======= ======= */
 /*  ======= ======= RESPONSIVE  ======= ======= */
 /* ======= ======= ======= iPhone6:P ======= ======= ======= */
-/* ======= ======= ======= iPhone6:P ======= ======= ======= */
 @media (max-width: 320px) {
   .section {
-    margin-top: 20px;
+    top: 0;
     position: relative;
-    height: 320px;
+    height: 240px;
     background-color: red; }
 
   .section-header {
     position: relative;
     top: 0;
-    height: 60px;
+    height: 40px;
     margin: 0;
     background-color: #88d317; }
 
   .section-content {
-    height: 320px;
+    height: 240px;
     margin: 0; }
 
   .title1 {
-    margin: 12px 10px 0 0;
-    font-family: 'Special Elite', cursive; }
+    display: inline-block;
+    margin: 0 10px 0 0;
+    font-size: 1.6em;
+    font-family: 'Special Elite', cursive;
+    font-weight: 700; }
 
   .title2 {
-    margin: 10px 6px 0 10px;
+    display: inline-block;
+    margin: 0 6px 0 10px;
+    font-size: 1.6em;
     font-family: 'Roboto', sans-serif;
     font-weight: 200; }
 
-  .pixBox {
+  #D_pixBox {
+    position: absolute;
     float: left;
+    width: 80%;
+    height: auto; }
+
+  #D_pic {
+    width: 100%;
+    height: 100%; }
+
+  #W_pixBox {
+    float: left;
+    width: 840px;
+    height: 100px;
+    margin: 10px; }
+
+  #W_pic {
     width: 100px;
-    height: 80px;
-    margin: 10px; } }
+    height: auto;
+    margin: 10px; }
+
+  #M_pixBox {
+    float: left;
+    width: 840px;
+    height: 120px;
+    margin: 10px; }
+
+  #Y_pixBox {
+    float: left;
+    width: 160px;
+    height: 140px;
+    margin: 10px; }
+
+  /* ======= day ======= */
+  #D_header {
+    background-color: #96858f; }
+
+  #D_content {
+    background-color: #6d7993; }
+
+  #D_pixBox {
+    background-color: #9099a2; }
+
+  /* ======= week ======= */
+  #W_header {
+    background-color: #d5d5d5; }
+
+  #W_content {
+    background-color: #062f4f; }
+
+  #W_pixBox {
+    background-color: #813772; }
+
+  /* ======= month ======= */
+  #M_header {
+    background-color: #b82601; }
+
+  #M_content {
+    background-color: #945d60; }
+
+  #M_pixBox {
+    background-color: #626e60; }
+
+  /* ======= year ======= */
+  #Y_header {
+    background-color: #af473c; }
+
+  #Y_content {
+    background-color: #cad0c8; }
+
+  #Y_pixBox {
+    background-color: #1fb58f; } }
 /* ======= ======= ======= tablet:L ======= ======= ======= */
 @media (min-width: 321px) and (max-width: 668px) {
   .section {
@@ -162,7 +233,7 @@ body {
   .section-header {
     position: relative;
     top: 0;
-    height: 20%;
+    height: 30%;
     margin: 0;
     background-color: #88d317; }
 
@@ -171,11 +242,16 @@ body {
     margin: 0; }
 
   .title1 {
-    margin: 12px 10px 0 0;
-    font-family: 'Special Elite', cursive; }
+    display: inline-block;
+    margin: 0 10px 0 0;
+    font-size: 1.6em;
+    font-family: 'Special Elite', cursive;
+    font-weight: 700; }
 
   .title2 {
-    margin: 10px 6px 0 10px;
+    display: inline-block;
+    margin: 2px 6px 0 10px;
+    font-size: 1.6em;
     font-family: 'Roboto', sans-serif;
     font-weight: 200; }
 
@@ -192,7 +268,7 @@ body {
   #D_content {
     background-color: #6d7993; }
 
-  #D_picBox {
+  #D_pixBox {
     background-color: #9099a2; }
 
   /* ======= week ======= */
@@ -202,7 +278,7 @@ body {
   #W_content {
     background-color: #062f4f; }
 
-  #W_picBox {
+  #W_pixBox {
     background-color: #813772; }
 
   /* ======= month ======= */
@@ -212,7 +288,7 @@ body {
   #M_content {
     background-color: #945d60; }
 
-  #M_picBox {
+  #M_pixBox {
     background-color: #626e60; }
 
   /* ======= year ======= */
@@ -222,7 +298,7 @@ body {
   #Y_content {
     background-color: #cad0c8; }
 
-  #Y_picBox {
+  #Y_pixBox {
     background-color: #1fb58f; } }
 /* ======= NED ======= */
 /*  ======= ======= ARCHIVE  ======= ======= */
