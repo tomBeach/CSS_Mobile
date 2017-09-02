@@ -15,7 +15,7 @@ $(document).ready(function() {
             console.log("== M_pic ==");
             $('#NED_header').css('display', 'block');
             $('html, body').animate({
-                scrollTop: $('#NED_header').offset().top - 60
+                scrollTop: $('#NED_header').offset().top
             }, 300);
         }
     }
@@ -83,11 +83,13 @@ $(document).ready(function() {
                 }, 300);
                 break;
         }
+        toggleMenu();
+        $('.menu-btn').css('background-color', 'rgb(14, 11, 22)')
     }
     function checkImageWH(imageId) {
         console.log("== checkImageWH ==");
         // == get selected image
-        var dayImage = $("#" + imageId);
+        var dayImage = $("." + imageId);
         console.log("dayImage:", dayImage);
 
         // == create new image to test HW
@@ -128,7 +130,7 @@ $(document).ready(function() {
         // == handle portrait images
         } else {
             console.log("+++ portrait +++");
-            var newW = parseInt((picData[2]*imageW)/picData[1]);
+            var newW = parseInt((picData[2]*picData[0])/picData[1]);
             $(dayBox).css('width', newW + 'px');
             $(dayBox).css('height', picData[2] + 'px');
             $(dayBox).css('top', newT + 'px');

@@ -109,10 +109,8 @@ body {
 /* ======= page-content ======= */
 #content {
   position: relative;
-  height: 80%;
   top: 0;
-  margin-top: 60px;
-  background-color: #4717f6; }
+  margin-top: 60px; }
 
 #NED {
   display: none;
@@ -162,40 +160,28 @@ body {
 #D_header {
   background-color: #96858f; }
 
-#D_content {
-  background-color: #6d7993; }
-
-#D_pixBox {
+#D_content, #D_pixBox {
   background-color: #9099a2; }
 
 /* ======= week ======= */
 #W_header {
   background-color: #d5d5d5; }
 
-#W_content {
-  background-color: #062f4f; }
-
-#W_pixBox {
+#W_content, #W_pixBox {
   background-color: #813772; }
 
 /* ======= month ======= */
 #M_header {
   background-color: #b82601; }
 
-#M_content {
-  background-color: #945d60; }
-
-#M_pixBox {
+#M_content, .M_pixBox {
   background-color: #626e60; }
 
 /* ======= year ======= */
 #Y_header {
   background-color: #af473c; }
 
-#Y_content {
-  background-color: #cad0c8; }
-
-#Y_pixBox {
+#Y_content, #Y_pixBox {
   background-color: #1fb58f; }
 
 /*  ======= ======= RESPONSIVE  ======= ======= */
@@ -259,13 +245,16 @@ body {
 
   /* ======= month ======= */
   #M_content {
-    overflow-x: scroll; }
+    overflow-y: scroll; }
 
-  #M_pixBox {
+  .M_pixBox {
     float: left;
-    width: calc((120px * 7) + (20px * 7));
-    height: 100%;
-    margin: 0; }
+    width: 100%;
+    margin: 10px 0 5px 0;
+    border-bottom: 2px solid black; }
+
+  .M_pixBox:last-child {
+    border-bottom: none; }
 
   .M_pic {
     float: left;
@@ -273,7 +262,16 @@ body {
     height: auto;
     margin: 10px; }
 
+  .week-label {
+    margin: 5px 0 0 10px;
+    font-size: 1.4em;
+    color: #88d317; }
+
   /* ======= year ======= */
+  #Y_content {
+    min-height: 667px;
+    overflow-y: scroll; }
+
   #Y_pixBox {
     width: 160px;
     margin: 0; }
@@ -283,22 +281,12 @@ body {
     height: auto;
     margin: 10px; } }
 /* ======= ======= ======= tablet:L ======= ======= ======= */
-@media (min-width: 321px) and (max-width: 668px) {
-  .section {
-    margin-top: 20px;
-    position: relative;
-    height: 120px;
-    background-color: red; }
-
+@media (min-width: 321px) and (max-width: 768px) {
   .section-header {
     position: relative;
-    top: 0;
-    height: 30%;
-    margin: 0;
-    background-color: #88d317; }
+    height: 40px; }
 
   .section-content {
-    height: 120px;
     margin: 0; }
 
   .title1 {
@@ -326,9 +314,7 @@ body {
 
   #W_pixBox {
     float: left;
-    width: calc((120px * 7) + (20px * 7));
-    height: 100%;
-    margin: 0; }
+    width: calc((120px * 7) + (20px * 7)); }
 
   .W_pic {
     float: left;
@@ -338,28 +324,28 @@ body {
 
   /* ======= month ======= */
   #M_content {
-    overflow-x: scroll; }
+    overflow-x: scroll;
+    padding: 20px; }
 
-  #M_pixBox {
+  .M_pixBox {
     float: left;
-    width: calc((120px * 7) + (20px * 7));
-    height: 100%;
-    margin: 0;
-    overflow-y: hidden; }
-
-  .M_pic {
-    float: left;
-    width: 120px;
-    height: auto;
-    margin: 10px; }
+    width: calc((120px * 7) + (20px * 7) + 30px);
+    border-bottom: 2px solid black; }
 
   .M_pic {
     float: left;
     width: 120px;
     height: auto;
     margin: 10px; }
+
+  .M_pic:last-child {
+    margin-right: 30px; }
 
   /* ======= year ======= */
+  #Y_content {
+    min-height: 667px;
+    overflow-y: scroll; }
+
   #Y_pixBox {
     float: left;
     width: calc((120px * 7) + (20px * 7));
@@ -372,7 +358,90 @@ body {
     width: 120px;
     height: auto;
     margin: 10px; } }
-/* ======= NED ======= */
+/* ======= ======= ======= laptop ======= ======= ======= */
+@media (min-width: 769px) and (max-width: 1680px) {
+  .section-header {
+    position: relative;
+    clear: both;
+    height: 40px;
+    top: 0; }
+
+  .title1 {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    font-size: 1.6em;
+    font-family: 'Special Elite', cursive;
+    font-weight: 700; }
+
+  .title2 {
+    display: inline-block;
+    margin: 2px 6px 0 10px;
+    font-size: 1.6em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200; }
+
+  /* ======= day ======= */
+  .D_pic {
+    width: auto;
+    height: 240px;
+    margin: 10px; }
+
+  /* ======= week ======= */
+  #W_content {
+    height: 25%; }
+
+  #W_pixBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    float: left;
+    width: 100%;
+    height: 100%;
+    margin: 0; }
+
+  .W_pic {
+    float: left;
+    width: 120px;
+    height: auto;
+    margin: 10px; }
+
+  /* ======= month ======= */
+  #M_content {
+    width: 100%;
+    padding-bottom: 20px; }
+
+  .M_pixBox {
+    width: 90%;
+    margin: 0 auto;
+    border-bottom: 2px solid black; }
+
+  .M_pic {
+    float: left;
+    width: 120px;
+    height: auto;
+    margin: 10px; }
+
+  .clearfix {
+    overflow: auto; }
+
+  /* ======= year ======= */
+  #Y_content {
+    min-height: 667px;
+    overflow-y: scroll; }
+
+  #Y_pixBox {
+    float: left;
+    width: calc((120px * 7) + (20px * 7));
+    height: auto;
+    margin: 0;
+    overflow-y: hidden; }
+
+  .Y_pic {
+    float: left;
+    width: 120px;
+    height: auto;
+    margin: 10px; } }
 /*  ======= ======= ARCHIVE  ======= ======= */
 /*  ======= ======= ARCHIVE  ======= ======= */
 /*  ======= ======= ARCHIVE  ======= ======= */

@@ -71,14 +71,14 @@ $mobile_W_pixBoxW: 700px;
 $mobile_M_pixBoxW: 700px;
 $mobile_Y_pixBoxW: 320px;
 
-$tablet_headerH: 30%;
+$tablet_headerH: 40px;
 $tablet_sectionH: 120px;
 $tablet_D_pixBoxW: 100%;
 $tablet_W_pixBoxW: 100%;
 $tablet_M_pixBoxW: 100%;
 $tablet_Y_pixBoxW: 100%;
 
-$laptop_headerH: 20%;
+$laptop_headerH: 40px;
 $laptop_sectionH: 20%;
 $laptop_D_pixBoxW: 100%;
 $laptop_W_pixBoxW: 100%;
@@ -198,10 +198,8 @@ body {
 /* ======= page-content ======= */
 #content {
     position: relative;
-    height: 80%;
     top: 0;
-    margin-top: $page_headerH;
-    background-color: $jewel;
+    margin-top: $page_headerH;            // forces content below page header (due to fixed header)
 }
 #NED {
     display: none;
@@ -252,10 +250,7 @@ body {
 #D_header {
     background-color: $dusty;
 }
-#D_content {
-    background-color: $lavendar;
-}
-#D_pixBox {
+#D_content, #D_pixBox {
     background-color: $overcast;
 }
 
@@ -263,10 +258,7 @@ body {
 #W_header {
     background-color: $paper;
 }
-#W_content {
-    background-color: $ink;
-}
-#W_pixBox {
+#W_content, #W_pixBox {
     background-color: $posy;
 }
 
@@ -274,10 +266,7 @@ body {
 #M_header {
     background-color: $embers;
 }
-#M_content {
-    background-color: $terracotta;
-}
-#M_pixBox {
+#M_content, .M_pixBox {
     background-color: $herb;
 }
 
@@ -285,10 +274,7 @@ body {
 #Y_header {
     background-color: $chilli;
 }
-#Y_content {
-    background-color: $sage;
-}
-#Y_pixBox {
+#Y_content, #Y_pixBox {
     background-color: $ocean;
 }
 
@@ -297,7 +283,6 @@ body {
 /*  ======= ======= RESPONSIVE  ======= ======= */
 /*  ======= ======= RESPONSIVE  ======= ======= */
 /*  ======= ======= RESPONSIVE  ======= ======= */
-
 
 /* ======= ======= ======= iPhone6:P ======= ======= ======= */
 @media (max-width: 320px) {
@@ -360,13 +345,16 @@ body {
 
     /* ======= month ======= */
     #M_content {
-        overflow-x: scroll;
+        overflow-y: scroll;
     }
-    #M_pixBox {
+    .M_pixBox {
         float: left;
-        width: calc((120px * 7) + (20px * 7));
-        height: 100%;
-        margin: 0;
+        width: 100%;
+        margin: 10px 0 5px 0;
+        border-bottom: 2px solid black;
+    }
+    .M_pixBox:last-child {
+        border-bottom: none;
     }
     .M_pic {
         float: left;
@@ -374,8 +362,17 @@ body {
         height: auto;
         margin: 10px;
     }
+    .week-label {
+        margin: 5px 0 0 10px;
+        font-size: 1.4em;
+        color: $lime;
+    }
 
     /* ======= year ======= */
+    #Y_content {
+        min-height: 667px;
+        overflow-y: scroll;
+    }
     #Y_pixBox {
         width: 160px;
         margin: 0;
@@ -388,22 +385,13 @@ body {
 }
 
 /* ======= ======= ======= tablet:L ======= ======= ======= */
-@media (min-width: 321px) and (max-width: 668px) {
-    .section {
-        margin-top: 20px;
-        position: relative;
-        height: $tablet_sectionH;
-        background-color: red;
-    }
+@media (min-width: 321px) and (max-width: 768px) {
     .section-header {
         position: relative;
-        top: 0;
         height: $tablet_headerH;
-        margin: 0;
-        background-color: $lime;
     }
     .section-content {
-        height: $tablet_sectionH;
+        // height: $tablet_sectionH;
         margin: 0;
     }
     .title1 {
@@ -433,8 +421,6 @@ body {
     #W_pixBox {
         float: left;
         width: calc((120px * 7) + (20px * 7));
-        height: 100%;
-        margin: 0;
     }
     .W_pic {
         float: left;
@@ -446,13 +432,12 @@ body {
     /* ======= month ======= */
     #M_content {
         overflow-x: scroll;
+        padding: 20px;
     }
-    #M_pixBox {
+    .M_pixBox {                    // bottom border separates weeks
         float: left;
-        width: calc((120px * 7) + (20px * 7));
-        height: 100%;
-        margin: 0;
-        overflow-y: hidden;
+        width: calc((120px * 7) + (20px * 7) + 30px);
+        border-bottom: 2px solid black;
     }
     .M_pic {
         float: left;
@@ -460,17 +445,109 @@ body {
         height: auto;
         margin: 10px;
     }
-    .M_pic {
+    .M_pic:last-child {            // add right marging to last pic in week row
+        margin-right: 30px;
+    }
+
+    /* ======= year ======= */
+    #Y_content {
+        min-height: 667px;
+        overflow-y: scroll;
+    }
+    #Y_pixBox {
+        float: left;
+        width: calc((120px * 7) + (20px * 7));
+        height: auto;
+        margin: 0;
+        overflow-y: hidden;
+    }
+    .Y_pic {
+        float: left;
+        width: 120px;
+        height: auto;
+        margin: 10px;
+    }
+    // .clearfix {                            // alternative to "display:inline-block/width:100%" method
+    //     overflow: auto;                    // fixes collapsing containers for floated elements
+    // }
+}
+
+/* ======= ======= ======= laptop ======= ======= ======= */
+@media (min-width: 769px) and (max-width: 1680px) {
+    .section-header {
+        position: relative;
+        clear: both;                        // clears effects of floated title/logo elements
+        height: $laptop_headerH;
+        top: 0;
+    }
+    .title1 {
+        display: inline-block;
+        margin: 0 10px 0 0;
+        font-size: 1.6em;
+        font-family: 'Special Elite', cursive;
+        font-weight: 700;
+    }
+    .title2 {
+        display: inline-block;
+        margin: 2px 6px 0 10px;
+        font-size: 1.6em;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 200;
+    }
+
+    /* ======= day ======= */
+    .D_pic {
+        width: auto;
+        height: 240px;
+        margin: 10px;
+    }
+
+    /* ======= week ======= */
+    #W_content {
+        height: 25%;
+    }
+    #W_pixBox {                           // flexbox solution (centers/aligns pix)
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        float: left;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    .W_pic {
         float: left;
         width: 120px;
         height: auto;
         margin: 10px;
     }
 
+    /* ======= month ======= */
+    #M_content {                           // collapses if clearfix not used (below)
+        width: 100%;                       // fills full wondow background color
+        padding-bottom: 20px;
+    }
+    .M_pixBox {                            // collapses if clearfix not used (below)
+        width: 90%;                        // allows for 90% bottom border lines
+        margin: 0 auto;                    // centers 7-pic collection
+        border-bottom: 2px solid black;
+    }
+    .M_pic {
+        float: left;
+        width: 120px;
+        height: auto;
+        margin: 10px;
+    }
+    .clearfix {                            // alternative to "display:inline-block/width:100%" method
+        overflow: auto;                    // fixes collapsing containers for floated elements
+    }
+
     /* ======= year ======= */
-    // #Y_content {
-    //     overflow-x: scroll;
-    // }
+    #Y_content {
+        min-height: 667px;
+        overflow-y: scroll;
+    }
     #Y_pixBox {
         float: left;
         width: calc((120px * 7) + (20px * 7));
@@ -485,62 +562,8 @@ body {
         margin: 10px;
     }
 }
-/* ======= NED ======= */
-#newLink {
 
-}
-#editLink {
 
-}
-#deleteLink {
-
-}
-#newBtn {
-
-}
-#editBtn {
-
-}
-#deleteBtn {
-
-}
-#saveBtn {
-
-}
-#cancelBtn {
-
-}
-
-// #title1 {
-//
-// }
-// #pix {
-//
-// }
-// #D_hdr {
-//
-// }
-// .section-header {
-//
-// }
-// #D_con {
-//
-// }
-// .section-content {
-//
-// }
-// #D_pb {
-//
-// }
-// .pixBox {
-//
-// }
-// #D_ftr {
-//
-// }
-// .section-footer {
-//
-// }
 
 /*  ======= ======= ARCHIVE  ======= ======= */
 /*  ======= ======= ARCHIVE  ======= ======= */
